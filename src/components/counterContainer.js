@@ -7,6 +7,7 @@ const mapStateToProps = (state) => {
         counter: state,
     };
 };
+
 const mapDispatchToProps = (dispatch) => {
     return {
         increment: () => dispatch(increment()),
@@ -15,4 +16,7 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-// add code here
+// Connect the Counter component with Redux
+const CounterContainer = connect(mapStateToProps, mapDispatchToProps)(Counter);
+
+export default CounterContainer;
